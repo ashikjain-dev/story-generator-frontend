@@ -20,4 +20,20 @@ export const generateStory = async (context: string) => {
   }
 };
 
+export interface FeedbackRequest {
+  name?: string;
+  rating: number;
+  comments?: string;
+}
+
+export const submitFeedback = async (payload: FeedbackRequest) => {
+  try {
+    const response = await fetcher.post('/feedback', payload);
+    return response.data;
+  } catch (error) {
+    console.error('Feedback API Error:', error);
+    throw error;
+  }
+};
+
 export default fetcher;
