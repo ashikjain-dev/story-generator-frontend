@@ -77,8 +77,26 @@ body {
   background: rgba(56, 189, 248, 0.2);
 }
 
+.contact-trigger-button {
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-primary);
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.contact-trigger-button:hover {
+  background: rgba(56, 189, 248, 0.2);
+}
+
 .feedback-success-banner {
   margin-bottom: 0.85rem;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid rgba(74, 222, 128, 0.4);
   background: rgba(22, 163, 74, 0.15);
   color: #86efac;
@@ -90,6 +108,9 @@ body {
 
 .feedback-error-banner {
   margin-bottom: 0.85rem;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid rgba(248, 113, 113, 0.5);
   background: rgba(220, 38, 38, 0.18);
   color: #fca5a5;
@@ -97,4 +118,11 @@ body {
   padding: 0.55rem 0.75rem;
   font-size: 0.92rem;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .feedback-success-banner,
+  .feedback-error-banner {
+    width: 100%;
+  }
 }

@@ -36,4 +36,21 @@ export const submitFeedback = async (payload: FeedbackRequest) => {
   }
 };
 
+export interface ContactRequest {
+  name?: string;
+  email: string;
+  topic: string;
+  message: string;
+}
+
+export const submitContact = async (payload: ContactRequest) => {
+  try {
+    const response = await fetcher.post('/contact', payload);
+    return response.data;
+  } catch (error) {
+    console.error('Contact API Error:', error);
+    throw error;
+  }
+};
+
 export default fetcher;
